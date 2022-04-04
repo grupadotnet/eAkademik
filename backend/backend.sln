@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.API", "eAkademik.API\eAkademik.API.csproj", "{B2C6EDD4-4E5B-43BB-80C4-4F421049B030}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.Model", "eAkademik.Model\eAkademik.Model.csproj", "{F3F48A4A-ACAB-4C8E-80DA-867764AD9697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.Seed", "eAkademik.Seed\eAkademik.Seed.csproj", "{003A5F51-D82E-4A18-B26D-EA4DCBBF31FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{B2C6EDD4-4E5B-43BB-80C4-4F421049B030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2C6EDD4-4E5B-43BB-80C4-4F421049B030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C6EDD4-4E5B-43BB-80C4-4F421049B030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F48A4A-ACAB-4C8E-80DA-867764AD9697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F48A4A-ACAB-4C8E-80DA-867764AD9697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F48A4A-ACAB-4C8E-80DA-867764AD9697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F48A4A-ACAB-4C8E-80DA-867764AD9697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003A5F51-D82E-4A18-B26D-EA4DCBBF31FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003A5F51-D82E-4A18-B26D-EA4DCBBF31FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003A5F51-D82E-4A18-B26D-EA4DCBBF31FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003A5F51-D82E-4A18-B26D-EA4DCBBF31FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
