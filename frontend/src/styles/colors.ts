@@ -1,9 +1,9 @@
 // Colors names are taken from https://chir.ag/projects/name-that-color/
 
-const blue = '#0000FF';
+const red = '#FF0000';
 const white = '#FFFFFF';
 
 export const Colors = {
-  primary: blue,
+  primary: red,
   onPrimary: white,
 }
