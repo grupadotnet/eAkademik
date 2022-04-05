@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const StartupView = () => (
   <Container>
-    <div>eAkadimik</div>
+    <div>eAkademik</div>
     <div><Link to="/components">sandbox</Link></div>
   </Container>
 );
