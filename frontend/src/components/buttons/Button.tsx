@@ -8,6 +8,7 @@ const Button = styled(AButton)`
   /* TODO: Change colors */
   background-color: ${Colors.primary};
   color: ${Colors.onPrimary};
+  border-radius: 5px;
 
   &:hover {
     color: ${Colors.onPrimary};

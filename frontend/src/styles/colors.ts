@@ -2,8 +2,9 @@
 
 const red = '#FF0000';
 const white = '#FFFFFF';
+const cornflowerBlue = '#7467EF';
 
 export const Colors = {
-  primary: red,
+  primary: cornflowerBlue,
   onPrimary: white,
 }
