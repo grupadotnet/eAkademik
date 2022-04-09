@@ -5,14 +5,24 @@ import styled from "styled-components";
 import { Colors } from "../../styles";
 
 const Button = styled(AButton)`
-  /* TODO: Change colors */
   background-color: ${Colors.primary};
   color: ${Colors.onPrimary};
-  border-radius: 5px;
+  border-radius: 8px;
+  border: none;
+
+  &:focus{
+    background-color: ${Colors.primary};
+    color: ${Colors.onPrimary};
+  }
 
   &:hover {
     color: ${Colors.onPrimary};
-    background-color: ${darken(0.2, Colors.primary)};
+    background-color: ${darken(0.45, Colors.primary)};
+  }
+
+  &:visited{
+    background-color: ${Colors.primary};
+    color: ${Colors.onPrimary};
   }
 `;
 
