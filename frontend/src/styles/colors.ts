@@ -2,8 +2,10 @@
 
 const white = '#FFFFFF';
 const cornflowerBlue = '#7467EF';
+const BlueViolet = '#7467BB'
 
 export const Colors = {
   primary: cornflowerBlue,
   onPrimary: white,
+  hoverPrimary: BlueViolet,
 }

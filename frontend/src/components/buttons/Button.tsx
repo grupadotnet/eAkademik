@@ -1,5 +1,5 @@
 import { Button as AButton } from "antd";
-import { darken } from "polished";
+import { darken, lighten } from "polished";
 import styled from "styled-components";
 
 import { Colors } from "../../styles";
@@ -7,7 +7,7 @@ import { Colors } from "../../styles";
 const Button = styled(AButton)`
   background-color: ${Colors.primary};
   color: ${Colors.onPrimary};
-  border-radius: 8px;
+  border-radius: 4px;
   border: none;
 
   &:focus{
@@ -17,7 +17,7 @@ const Button = styled(AButton)`
 
   &:hover {
     color: ${Colors.onPrimary};
-    background-color: ${darken(0.45, Colors.primary)};
+    background-color: ${darken(0.07, Colors.hoverPrimary)};
   }
 
   &:visited{
