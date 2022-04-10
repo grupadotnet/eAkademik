@@ -1,11 +1,11 @@
 // Colors names are taken from https://chir.ag/projects/name-that-color/
 
-const white = '#FFFFFF';
+const blueViolet = '#7467BB';
 const cornflowerBlue = '#7467EF';
-const BlueViolet = '#7467BB'
+const white = '#FFFFFF';
 
 export const Colors = {
+  hoverPrimary: blueViolet,
   primary: cornflowerBlue,
   onPrimary: white,
-  hoverPrimary: BlueViolet,
 }
