@@ -17,7 +17,7 @@ const Button = styled(AButton)`
   }
 
   &:hover {
-    background-color: ${darken(0.07, Colors.hoverPrimary)};
+    background-color: ${darken(0.05, Colors.primary)};
   }
 `;
 
