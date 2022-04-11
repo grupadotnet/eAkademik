@@ -14,6 +14,7 @@ const ComponentsView = () => (
     <Item>
       <Button>Główny przycisk</Button>
     </Item>
+    <hr/>
   </div>
 );
 
