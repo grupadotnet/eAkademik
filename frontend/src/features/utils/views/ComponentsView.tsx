@@ -15,9 +15,11 @@ const ComponentsView = () => (
     <Item>
       <Button>Główny przycisk</Button>
     </Item>
+
     <Item>
       <Header></Header>
     </Item>
+
     <hr/>
   </div>
 );
