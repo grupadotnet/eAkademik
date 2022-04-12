@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Button } from '../../../components/buttons';
-import { Header } from '../../../components/layouts';
+import { Header } from '../../../components/layouts/components/index';
 
 const Item = styled.div`
   margin: 25px 0px;
