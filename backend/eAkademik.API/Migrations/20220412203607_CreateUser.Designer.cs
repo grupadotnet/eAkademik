@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using eAkademik.API;
@@ -11,9 +12,10 @@ using eAkademik.API;
 namespace eAkademik.API.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220412203607_CreateUser")]
+    partial class CreateUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,12 +43,6 @@ namespace eAkademik.API.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("first_name");
 
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("boolean")
-                        .HasDefaultValue(false)
-                        .HasColumnName("is_deleted");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -70,7 +66,6 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("2bebdce4-307b-4b33-8be5-7aa48ad99296"),
                             Email = "jankowalski@gmail.com",
                             FirstName = "Jan",
-                            IsDeleted = false,
                             LastName = "Kowalski",
                             Password = "test"
                         },
@@ -79,7 +74,6 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("46e57479-fd7e-4a88-98d6-1e4955d120b9"),
                             Email = "adamnowak@gmail.com",
                             FirstName = "Adam",
-                            IsDeleted = false,
                             LastName = "Nowak",
                             Password = "test"
                         },
@@ -88,7 +82,6 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("3cc29f11-4b32-4b36-8d2f-8c1d65da046e"),
                             Email = "ewakiwak@gmail.com",
                             FirstName = "Ewa",
-                            IsDeleted = false,
                             LastName = "Kiwak",
                             Password = "test"
                         });

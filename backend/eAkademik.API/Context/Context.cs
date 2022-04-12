@@ -2,25 +2,29 @@
 using eAkademik.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace eAkademik.API
-{
-    public class Context: DbContext
-    {
-        public Context(DbContextOptions options) : base(options)
-        {
-            
-        }
+namespace eAkademik.API;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
-        {
-            builder.UseSnakeCaseNamingConvention();
-        }
-        
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
-        
-        public DbSet<User> Users { get; set; }
+public class Context: DbContext
+{
+    public Context(DbContextOptions options) : base(options)
+    {
     }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSnakeCaseNamingConvention();
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
+
+    #region Entities
+    
+    public DbSet<User> Users { get; set; }
+    
+
+    #endregion
+   
 }
