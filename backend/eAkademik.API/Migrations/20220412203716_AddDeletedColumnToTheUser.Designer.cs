@@ -7,19 +7,22 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using eAkademik.API;
 
+#nullable disable
+
 namespace eAkademik.API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220404190142_CreateUserTable")]
-    partial class CreateUserTable
+    [Migration("20220412203716_AddDeletedColumnToTheUser")]
+    partial class AddDeletedColumnToTheUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityByDefaultColumns()
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.10");
+                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("eAkademik.Model.User", b =>
                 {
@@ -35,11 +38,19 @@ namespace eAkademik.API.Migrations
                         .HasColumnName("email");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
                         .HasColumnName("first_name");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_deleted");
+
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
                         .HasColumnName("last_name");
@@ -53,7 +64,7 @@ namespace eAkademik.API.Migrations
                     b.HasKey("Id")
                         .HasName("pk_users");
 
-                    b.ToTable("users");
+                    b.ToTable("users", (string)null);
 
                     b.HasData(
                         new
@@ -61,6 +72,7 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("2bebdce4-307b-4b33-8be5-7aa48ad99296"),
                             Email = "jankowalski@gmail.com",
                             FirstName = "Jan",
+                            IsDeleted = false,
                             LastName = "Kowalski",
                             Password = "test"
                         },
@@ -69,6 +81,7 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("46e57479-fd7e-4a88-98d6-1e4955d120b9"),
                             Email = "adamnowak@gmail.com",
                             FirstName = "Adam",
+                            IsDeleted = false,
                             LastName = "Nowak",
                             Password = "test"
                         },
@@ -77,6 +90,7 @@ namespace eAkademik.API.Migrations
                             Id = new Guid("3cc29f11-4b32-4b36-8d2f-8c1d65da046e"),
                             Email = "ewakiwak@gmail.com",
                             FirstName = "Ewa",
+                            IsDeleted = false,
                             LastName = "Kiwak",
                             Password = "test"
                         });

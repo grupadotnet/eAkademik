@@ -1,9 +1,6 @@
-﻿using System;
+﻿namespace eAkademik.Model.Shared;
 
-namespace eAkademik.Model.Shared
+public interface IEntity
 {
-    public interface IEntity
-    {
-        public Guid Id { get; set; }
-    }
+    public Guid Id { get; set; }
 }
