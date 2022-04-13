@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '../../../components/buttons';
 import { Header } from '../../../components/layouts/components';
+import { Checkbox } from '../../../components'
 
 const Item = styled.div`
   margin: 25px 0px;
@@ -17,6 +18,9 @@ const ComponentsView = () => (
     </Item>
     <Item>
       <Header></Header>
+    </Item>
+    <Item>
+      <Checkbox></Checkbox>
     </Item>
     <hr/>
   </div>
