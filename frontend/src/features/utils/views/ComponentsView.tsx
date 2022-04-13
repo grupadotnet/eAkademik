@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '../../../components/buttons';
 import { Header } from '../../../components/layouts/components';
+import { Card } from '../../../components/card'
 
 const Item = styled.div`
   margin: 25px 0px;
@@ -13,10 +14,21 @@ const ComponentsView = () => (
     <Link to="/">Wróć do strony głównej</Link>
     <hr/>
     <Item>
+      Button component
+      <br></br>
       <Button>Główny przycisk</Button>
     </Item>
+
     <Item>
+      <br></br>
+      Header component
       <Header></Header>
+    </Item>
+    
+    <Item>
+      <br></br>
+      Card component
+      <Card></Card>
     </Item>
     <hr/>
   </div>
