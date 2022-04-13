@@ -6,7 +6,12 @@ import { Colors } from "../../styles";
 
 const Card = styled(ACard)`
     background-color: ${Colors.onPrimary};
-    box-shadow: 0px 5px 10px -5px rgba(100, 100, 100, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px -4px rgba(100, 100, 100, 0.5);
+
+    .ant-card-head
+    {
+    }
 `
 
 export default Card;
