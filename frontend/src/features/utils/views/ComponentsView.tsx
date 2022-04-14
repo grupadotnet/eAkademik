@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import { Button } from '../../../components/buttons';
 import { Header } from '../../../components/layouts/components';
-import { Card } from '../../../components/card'
+import { Card } from '../../../components/card';
+import { Checkbox } from '../../../components/checkbox';
 
 const Item = styled.div`
   margin: 25px 0px;
@@ -29,6 +30,9 @@ const ComponentsView = () => (
       <br></br>
       Card component
       <Card title="Simple table" extra="Some text"><div>Tutaj jakaś treść</div></Card>
+    </Item>
+    <Item>
+      <Checkbox></Checkbox>
     </Item>
     <hr/>
   </div>
