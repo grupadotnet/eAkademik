@@ -11,6 +11,7 @@ const Card = styled(ACard)`
 
     .ant-card-head
     {
+        border-bottom: none;
     }
 `
 

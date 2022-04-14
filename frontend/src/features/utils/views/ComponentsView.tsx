@@ -28,7 +28,7 @@ const ComponentsView = () => (
     <Item>
       <br></br>
       Card component
-      <Card title="Simple table"><div>Tutaj jakaś treść</div></Card>
+      <Card title="Simple table" extra="Some text"><div>Tutaj jakaś treść</div></Card>
     </Item>
     <hr/>
   </div>
