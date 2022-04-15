@@ -1,0 +1,16 @@
+.MenuItem{
+    text-align: center;
+    position:relative;
+    color: grey;
+    right:0px;
+    
+    top:250px;
+    height: 20px;
+  }
+  .ul{
+    list-style-type: none;
+  }
+  .MenuItem:hover {
+    color: white;
+    background-color: #1b2136;
+  }
