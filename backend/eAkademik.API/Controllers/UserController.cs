@@ -1,5 +1,4 @@
 ﻿using eAkademik.API.Services;
-using eAkademik.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eAkademik.API.Controllers;
@@ -22,7 +21,7 @@ public class UserController : ControllerBase
 
         return Ok(users);
     }
-        
+
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetUser(Guid id)
     {
@@ -32,9 +31,23 @@ public class UserController : ControllerBase
 
             return Ok(user);
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return Ok(new User());
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> DeleteUser(Guid id)
+    {
+        try
+        {
+            await _userService.DeleteUser(id);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
         }
     }
 }
