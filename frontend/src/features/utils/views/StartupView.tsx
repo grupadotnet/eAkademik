@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -9,11 +9,13 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const StartupView = () => (
-  <Container>
-    <div>eAkademik</div>
-    <div><Link to="/components">sandbox</Link></div>
-  </Container>
-);
+function StartupView() {
+  return (
+    <Container>
+      <div>eAkademik</div>
+      <div><Link to="/components">sandbox</Link></div>
+    </Container>
+  );
+}
 
 export default StartupView;
