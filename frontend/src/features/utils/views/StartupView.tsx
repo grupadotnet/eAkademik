@@ -9,13 +9,11 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-function StartupView() {
-  return (
-    <Container>
-      <div>eAkademik</div>
-      <div><Link to="/components">sandbox</Link></div>
-    </Container>
-  );
-}
+const StartupView = () => (
+  <Container>
+    <div>eAkademik</div>
+    <div><Link to="/components">sandbox</Link></div>
+  </Container>
+);
 
 export default StartupView;
