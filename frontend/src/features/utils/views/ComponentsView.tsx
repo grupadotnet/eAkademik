@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import React from 'react';
 import { Button } from '../../../components/buttons';
-import { Header } from '../../../components/layouts/components';
+import { Header, Content } from '../../../components/layouts/components';
 import { Card } from '../../../components/card';
 import { Checkbox } from '../../../components/checkbox';
 
@@ -29,12 +29,21 @@ const ComponentsView = () => (
 
     <Item>
       <br />
+      Content component
+      <Content>1</Content>
+    </Item>
+
+    <Item>
+      <br />
       Card component
-      <Card title="Simple table" extra="Some text"><div>Tutaj jakaś treść</div></Card>
+      <Card title="Simple table" extra="Some text">
+        <div>Tutaj jakaś treść</div>
+      </Card>
     </Item>
     <Item>
       <Checkbox />
     </Item>
+
     <hr />
   </div>
 );

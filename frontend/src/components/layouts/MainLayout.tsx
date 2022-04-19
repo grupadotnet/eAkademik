@@ -1,8 +1,8 @@
 import { Layout } from 'antd';
 
-import { Header } from './components';
+import { Header, Content } from './components';
 
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
