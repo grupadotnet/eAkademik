@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eAkademik.API.Services;
 
-public class UserService: IUserService
+public class UserService : IUserService
 {
     private readonly Context _context;
 
