@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eAkademik.API.Services;
 
-public class UserService: IUserService
+public class UserService : IUserService
 {
     private readonly Context _context;
 
@@ -25,5 +25,16 @@ public class UserService: IUserService
             throw new Exception("User not found");
 
         return user;
+    }
+
+    public async Task DeleteUser(Guid id)
+    {
+        var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+
+        if (user is null)
+            throw new Exception("User not found");
+
+        user.IsDeleted = true;
+        await _context.SaveChangesAsync();
     }
 }

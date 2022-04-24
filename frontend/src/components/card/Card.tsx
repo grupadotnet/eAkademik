@@ -1,8 +1,8 @@
-import { Card as ACard } from 'antd'
+import { Card as ACard } from 'antd';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { Colors } from "../../styles";
+import { Colors } from '../../styles';
 
 const Card = styled(ACard)`
     background-color: ${Colors.onPrimary};
@@ -13,6 +13,6 @@ const Card = styled(ACard)`
     {
         border-bottom: none;
     }
-`
+`;
 
 export default Card;

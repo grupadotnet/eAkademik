@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import React from 'react';
 import { Button } from '../../../components/buttons';
 import { Header } from '../../../components/layouts/components';
 import { Card } from '../../../components/card';
@@ -13,29 +14,29 @@ const Item = styled.div`
 const ComponentsView = () => (
   <div style={{ padding: 50 }}>
     <Link to="/">Wróć do strony głównej</Link>
-    <hr/>
+    <hr />
     <Item>
       Button component
-      <br></br>
+      <br />
       <Button>Główny przycisk</Button>
     </Item>
 
     <Item>
-      <br></br>
+      <br />
       Header component
-      <Header></Header>
+      <Header />
     </Item>
-    
+
     <Item>
-      <br></br>
+      <br />
       Card component
       <Card title="Simple table" extra="Some text"><div>Tutaj jakaś treść</div></Card>
     </Item>
     <Item>
-      <Checkbox></Checkbox>
+      <Checkbox />
     </Item>
-    <hr/>
+    <hr />
   </div>
 );
 
-export default ComponentsView
+export default ComponentsView;

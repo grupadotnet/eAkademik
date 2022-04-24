@@ -1,5 +1,6 @@
-﻿using eAkademik.API.Services;
-using eAkademik.Model;
+﻿using AutoMapper;
+using eAkademik.API.Services;
+using eAkademik.API.ViewModel.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eAkademik.API.Controllers;
@@ -9,32 +10,51 @@ namespace eAkademik.API.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IMapper _mapper;
 
-    public UserController(IUserService userService)
+    public UserController(IUserService userService, IMapper mapper)
     {
         _userService = userService;
+        _mapper = mapper;
     }
 
     [HttpGet()]
-    public async Task<IActionResult> GetUsers()
+    public async Task<ActionResult<List<UserViewModel>>> GetUsers()
     {
         var users = await _userService.GetUsers();
 
-        return Ok(users);
+        var result = _mapper.Map<List<UserViewModel>>(users);
+
+        return Ok(result);
     }
-        
+
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> GetUser(Guid id)
+    public async Task<ActionResult<UserViewModel>> GetUser(Guid id)
     {
         try
         {
             var user = await _userService.GetUser(id);
+            var result = _mapper.Map<UserViewModel>(user);
 
-            return Ok(user);
+            return Ok(result);
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return Ok(new User());
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> DeleteUser(Guid id)
+    {
+        try
+        {
+            await _userService.DeleteUser(id);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
         }
     }
 }
