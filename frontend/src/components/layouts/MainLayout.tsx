@@ -1,8 +1,10 @@
 import { Layout } from 'antd';
-import {MenuItem} from '../navigation';
-import { Header } from './components'
-import {Icon} from  '../navigation'
-const { Sider,  Content } = Layout;
+
+import { MenuItem } from '../navigation';
+import { Header, Content } from './components'
+import { Icon } from  '../navigation'
+
+const { Sider } = Layout;
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
@@ -14,4 +16,4 @@ const MainLayout: React.FC = ({ children }) => (
   </Layout>
 );
 
-export default MainLayout
+export default MainLayout;
