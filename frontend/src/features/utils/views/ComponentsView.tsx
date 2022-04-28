@@ -27,32 +27,10 @@ const ComponentsView = () => (
       Header component
       <Header />
     </Item>
-<<<<<<< HEAD
     <Item>
       <Table pagination={{ pageSize: 20 }}></Table>
     </Item>
     <hr/>
-=======
-
-    <Item>
-      <br />
-      Content component
-      <Content>1</Content>
-    </Item>
-
-    <Item>
-      <br />
-      Card component
-      <Card title="Simple table" extra="Some text">
-        <div>Tutaj jakaś treść</div>
-      </Card>
-    </Item>
-    <Item>
-      <Checkbox />
-    </Item>
-
-    <hr />
->>>>>>> main
   </div>
 );
 
