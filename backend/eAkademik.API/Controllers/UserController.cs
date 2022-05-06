@@ -57,4 +57,18 @@ public class UserController : ControllerBase
             return BadRequest(e.Message);
         }
     }
+
+    [HttpPatch("{id:guid}")]
+    public async Task<IActionResult> EditUser([FromBody] UserViewModel userViewModel, Guid id)
+    {
+        try
+        {
+            await _userService.EditUser(id, userViewModel);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest("Couldn't update user");
+        }
+    }
 }
