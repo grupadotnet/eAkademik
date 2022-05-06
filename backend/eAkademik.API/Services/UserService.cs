@@ -1,5 +1,4 @@
 ﻿using eAkademik.Model;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using eAkademik.API.ViewModel.User;
 
