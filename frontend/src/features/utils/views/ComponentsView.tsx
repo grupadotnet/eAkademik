@@ -73,7 +73,7 @@ const ComponentsView = () => (
     <Item>
       <br />
       Table component
-      <Table pagination={{ pageSize: 20 }} columns={columns} dataSource={dataSource} />
+      <Table dataSource={dataSource} columns={columns} />
     </Item>
     <hr />
   </div>

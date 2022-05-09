@@ -38,5 +38,6 @@ width: 100%;
   color: white;
 }
 `;
+
 export default MenuItem;
 export { Icon };

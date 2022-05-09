@@ -1,18 +1,20 @@
-import { Table as ATable } from 'antd';
+import { Table as ATable, TableProps } from 'antd';
+import React from 'react';
 import styled from 'styled-components';
+import { size } from '../../constants';
 
 import { Colors } from '../../styles';
 
-const Table = styled(ATable)`
+const StyledTable = styled(ATable)`
     box-shadow: 0px 5px 30px -6px rgba(100, 100, 100, 0.5);
     overflow-x: auto;
     background: ${Colors.onPrimary};
 
     .ant-table-thead > tr > th {
         font-weight: 400;
-        color: rgba(0, 0, 0, 0.6);
+        color: ${Colors.gray};
         background: ${Colors.onPrimary};
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid ${Colors.divider};
     }
 
     .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
@@ -20,9 +22,13 @@ const Table = styled(ATable)`
     }
 
     .ant-table-tbody > tr > td {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid ${Colors.divider};
     }
 }
 `;
+
+const Table: React.VFC<TableProps<object>> = ({ ...passThroughProps }) => (
+  <StyledTable {...passThroughProps} pagination={{ pageSize: size }} />
+);
 
 export default Table;
