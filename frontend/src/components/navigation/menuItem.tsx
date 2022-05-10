@@ -1,10 +1,8 @@
-import {Menu as AMenuItem} from "antd";
-import styled from "styled-components";
-import {ProfileFilled} from '@ant-design/icons';
+import { Menu as AMenuItem } from 'antd';
+import styled from 'styled-components';
+import { ProfileFilled } from '@ant-design/icons';
 
-
- const Icon = styled(ProfileFilled)
- `
+const Icon = styled(ProfileFilled)`
  font-size: 18px;
  width: 1em;
     height: 1em;
@@ -40,5 +38,6 @@ width: 100%;
   color: white;
 }
 `;
+
 export default MenuItem;
-export {Icon};
+export { Icon };

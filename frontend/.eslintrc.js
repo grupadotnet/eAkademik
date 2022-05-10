@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    "linebreak-style": 0,
     'prefer-arrow-callback': 'error',
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
@@ -42,5 +43,5 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
     sourceType: 'module',
-  },
+  }
 };
