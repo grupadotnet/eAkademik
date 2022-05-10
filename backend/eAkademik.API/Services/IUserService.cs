@@ -11,5 +11,5 @@ public interface IUserService
 
     public Task DeleteUser(Guid id);
     
-    public Task EditUser(Guid id, UserViewModel user);
+    public Task EditUser(UserViewModel user);
 }

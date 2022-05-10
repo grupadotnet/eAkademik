@@ -58,12 +58,12 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpPatch("{id:guid}")]
-    public async Task<IActionResult> EditUser([FromBody] UserViewModel userViewModel, Guid id)
+    [HttpPatch()]
+    public async Task<IActionResult> EditUser([FromBody] UserViewModel userViewModel)
     {
         try
         {
-            await _userService.EditUser(id, userViewModel);
+            await _userService.EditUser(userViewModel);
             return Ok();
         }
         catch (Exception e)

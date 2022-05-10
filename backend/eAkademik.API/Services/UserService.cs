@@ -39,9 +39,9 @@ public class UserService : IUserService
         await _context.SaveChangesAsync();
     }
 
-    public async Task EditUser(Guid id, UserViewModel user)
+    public async Task EditUser(UserViewModel user)
     {
-        var existingUser = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+        var existingUser = await _context.Users.SingleOrDefaultAsync(x => x.Id == user.Id);
         
         if (existingUser is null)
             throw new Exception("User not found");
@@ -50,7 +50,6 @@ public class UserService : IUserService
         existingUser.LastName = user.LastName;
         existingUser.Email = user.Email;
 
-        _context.Users.Update(existingUser);
         await _context.SaveChangesAsync();
     }
 }
