@@ -7,7 +7,7 @@ const { Header: AHeader } = Layout;
 
 const Header = styled(AHeader)`
     background-color: ${Colors.onPrimary};
-    box-shadow: 0px 5px 30px -6px rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 5px 30px -6px ${Colors.shadow};
 `;
 
 export default Header;

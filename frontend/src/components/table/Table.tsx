@@ -6,13 +6,13 @@ import { size } from '../../constants';
 import { Colors } from '../../styles';
 
 const StyledTable = styled(ATable)`
-    box-shadow: 0px 5px 30px -6px rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 5px 30px -6px ${Colors.shadow};
     overflow-x: auto;
     background: ${Colors.onPrimary};
 
     .ant-table-thead > tr > th {
         font-weight: 400;
-        color: ${Colors.gray};
+        color: ${Colors.header};
         background: ${Colors.onPrimary};
         border-bottom: 1px solid ${Colors.divider};
     }
