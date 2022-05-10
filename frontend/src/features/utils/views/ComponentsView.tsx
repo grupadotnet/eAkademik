@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Card } from '../../../components/card'
+import { Checkbox } from '../../../components/checkbox'
 import { Button } from '../../../components/buttons';
 import { Header } from '../../../components/layouts/components';
 import { Table } from '../../../components/table';
@@ -69,6 +71,17 @@ const ComponentsView = () => (
       <br />
       Header component
       <Header />
+    </Item>
+    <Item>
+      <br />
+      Checkbox component
+      <br />
+      <Checkbox />
+    </Item>
+    <Item>
+      <br />
+      Card component
+      <Card />
     </Item>
     <Item>
       <br />
