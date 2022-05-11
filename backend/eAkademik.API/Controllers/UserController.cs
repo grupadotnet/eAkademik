@@ -59,6 +59,21 @@ public class UserController : ControllerBase
         }
     }
 
+    [HttpPatch()]
+    public async Task<IActionResult> EditUser([FromBody] UserViewModel userViewModel)
+    {
+        try
+        {
+            await _userService.EditUser(userViewModel);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest("Couldn't update user");
+        }
+    }
+}
+
     [HttpPost]
     public async Task<ActionResult<UserViewModel>> CreateUser(string firstName, string lastName, string email, string password)
     {

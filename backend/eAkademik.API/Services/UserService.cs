@@ -1,6 +1,7 @@
 ﻿using eAkademik.Model;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using eAkademik.API.ViewModel.User;
 
 namespace eAkademik.API.Services;
 
@@ -36,6 +37,20 @@ public class UserService : IUserService
             throw new Exception("User not found");
 
         user.IsDeleted = true;
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task EditUser(UserViewModel user)
+    {
+        var existingUser = await _context.Users.SingleOrDefaultAsync(x => x.Id == user.Id);
+        
+        if (existingUser is null)
+            throw new Exception("User not found");
+        
+        existingUser.FirstName = user.FirstName;
+        existingUser.LastName = user.LastName;
+        existingUser.Email = user.Email;
+
         await _context.SaveChangesAsync();
     }
 
