@@ -72,8 +72,6 @@ public class UserController : ControllerBase
             return BadRequest("Couldn't update user");
         }
     }
-}
-
     [HttpPost]
     public async Task<ActionResult<UserViewModel>> CreateUser(string firstName, string lastName, string email, string password)
     {
@@ -90,3 +88,5 @@ public class UserController : ControllerBase
         }
     }
 }
+
+
