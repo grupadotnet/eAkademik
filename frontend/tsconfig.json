@@ -19,8 +19,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/contansts/*": ["./src/contansts/*"],
+      "@/styles/*": ["./src/styles/*"],
+    }
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": ["node_modules", "**/node_modules/*", "build"]
 }

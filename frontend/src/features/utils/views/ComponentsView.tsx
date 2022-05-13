@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Card } from "../../../components/card";
-import { Checkbox } from "../../../components/checkbox";
-import { Button } from "../../../components/buttons";
-import { Header } from "../../../components/layouts/components";
-import { Table } from "../../../components/table";
+
+import { Card } from "@/components/card";
+import { Checkbox } from "@/components/checkbox";
+import { Button } from "@/components/buttons";
+import { Header } from "@/components/layouts/components";
+import { Table } from '@/components/table';
 
 const Item = styled.div`
   margin: 25px 0px;
