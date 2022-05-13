@@ -52,8 +52,8 @@ const dataSource = [
     key: "3",
     name: "Wiktor",
     age: "20",
-    address: "4 Best Street",
-    email: "wiktortoszef@gmail.com",
+    address: '4 Best Street',
+    email: 'wiktortoszef@gmail.com',
   },
 ];
 
