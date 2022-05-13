@@ -24,7 +24,6 @@ const StyledTable = styled(ATable)`
     .ant-table-tbody > tr > td {
         border-bottom: 1px solid ${Colors.divider};
     }
-}
 `;
 
 const Table: React.VFC<TableProps<object>> = ({ ...passThroughProps }) => (
