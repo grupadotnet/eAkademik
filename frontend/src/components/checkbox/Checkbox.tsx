@@ -1,7 +1,7 @@
 import { Checkbox as ACheckbox } from 'antd';
 import styled from 'styled-components';
 
-import { Colors } from '../../styles';
+import { Colors } from '@/styles/colors';
 
 const Checkbox = styled(ACheckbox)`
     .ant-checkbox-wrapper:hover .ant-checkbox-inner,
