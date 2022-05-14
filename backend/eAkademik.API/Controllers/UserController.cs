@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eAkademik.API.Services;
+using eAkademik.API.ViewModel.CreateUser;
 using eAkademik.API.ViewModel.User;
 using eAkademik.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -73,16 +74,15 @@ public class UserController : ControllerBase
         }
     }
     [HttpPost]
-    public async Task<ActionResult<UserViewModel>> CreateUser(string firstName, string lastName, string email, string password)
+    public async Task<ActionResult<UserViewModel>> CreateUser(CreateUserViewModel user)
     {
         try
         {
-            var user = await _userService.CreateUser(firstName, lastName, email, password);
-            var result = _mapper.Map<UserViewModel>(user);
+            var result = _mapper.Map<UserViewModel>(await _userService.CreateUser(user));
 
             return Ok(result);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             return BadRequest(e.Message);
         }
