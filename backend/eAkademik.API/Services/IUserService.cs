@@ -15,5 +15,5 @@ public interface IUserService
 
     public Task EditUser(UserViewModel user);
 
-    public Task<User> CreateUser(CreateUserViewModel user);
+    public Task<User> CreateUser(CreateUserViewModel createUserRequest);
 }

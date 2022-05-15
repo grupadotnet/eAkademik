@@ -22,7 +22,7 @@ public class AuthController : ControllerBase
         _userService = userService;
         _options = options;
     }
-
+    
     [HttpPost("login")]
     public async Task<ActionResult> Login(LoginViewModel loginRequest)
     {

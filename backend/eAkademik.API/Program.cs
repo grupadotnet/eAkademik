@@ -1,15 +1,12 @@
-using AutoMapper;
 using eAkademik.API;
+using eAkademik.API.Installers.Extensions;
 using eAkademik.API.Services;
 using eAkademik.API.Settings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("default")));
@@ -22,28 +19,19 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-#region Helpers
-
-var mapperConfig = new MapperConfiguration(mc => { mc.AddProfile(new MappingProfiles()); });
-
-mapperConfig.AssertConfigurationIsValid();
-var mapper = mapperConfig.CreateMapper();
-builder.Services.AddSingleton(mapper);
-
-#endregion
+builder.Services.InstallServicesInAssembly(builder.Configuration);
 
 #region Services
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 #endregion
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
