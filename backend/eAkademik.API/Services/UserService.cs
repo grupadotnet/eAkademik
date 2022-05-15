@@ -1,6 +1,5 @@
 ﻿using eAkademik.Model;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using eAkademik.API.ViewModel.User;
 using eAkademik.API.ViewModel.CreateUser;
 using AutoMapper;
@@ -60,26 +59,16 @@ public class UserService : IUserService
 
     public async Task<User> CreateUser(CreateUserViewModel createUserViewModel)
     {
-        try
-        {
-            createUserViewModel.isValid();
-        }
-        catch (Exception e)
-        {
-            throw new Exception(e.Message);
-        }
-
         var existingUser = await _context.Users.SingleOrDefaultAsync(e => e.Email == createUserViewModel.Email);
 
-        if (existingUser is not null)
-        {
-            throw new Exception("User with the same e-mail adress allready exists");
-
-        }
-
+        if (existingUser is not null) 
+            throw new Exception("User with the same e-mail address already exists");
+        
         var user = _mapper.Map<User>(createUserViewModel);
+        
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
+        
         return user;
     }
 }

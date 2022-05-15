@@ -2,7 +2,6 @@
 using eAkademik.API.Services;
 using eAkademik.API.ViewModel.CreateUser;
 using eAkademik.API.ViewModel.User;
-using eAkademik.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eAkademik.API.Controllers;
@@ -73,14 +72,20 @@ public class UserController : ControllerBase
             return BadRequest("Couldn't update user");
         }
     }
+    
     [HttpPost]
-    public async Task<ActionResult<UserViewModel>> CreateUser(CreateUserViewModel user)
+    public async Task<IActionResult> CreateUser(CreateUserViewModel createUserRequest)
     {
         try
         {
-            var result = _mapper.Map<UserViewModel>(await _userService.CreateUser(user));
+            var (isValid, message) = createUserRequest.IsValid();
 
-            return Ok(result);
+            if (!isValid)
+                return BadRequest(message);
+
+            var createdUser = await _userService.CreateUser(createUserRequest);
+            return Ok(createdUser.Id);
+            
         }
         catch (Exception e)
         {
