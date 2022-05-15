@@ -1,13 +1,8 @@
-﻿using System;
-using System.Diagnostics;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.AutoMoq;
-using AutoFixture.Kernel;
 using eAkademik.API;
 using eAkademik.API.Services;
-using EntityFrameworkCore.AutoFixture.InMemory;
 using FluentAssertions;
-using Moq;
 using Xunit;
 
 namespace eAkademik.UnitTests.Authentication;

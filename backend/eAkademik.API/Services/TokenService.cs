@@ -1,12 +1,15 @@
-﻿using eAkademik.API.Settings;
+﻿using System.Security.Claims;
+using eAkademik.API.Settings;
 using eAkademik.Model;
 using JWT.Algorithms;
 using JWT.Builder;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 
 namespace eAkademik.API.Services;
 
-public class TokenService: ITokenService
+public class TokenService : ITokenService
 {
     private readonly IOptions<JwtSettings> _jwtSettings;
 
@@ -25,11 +28,32 @@ public class TokenService: ITokenService
             // .AddClaim("role", user.Role)
             .AddClaim("jti", Guid.NewGuid())
             .Encode();
-
+        
         return token;
     }
 
-    public IDictionary<string, string> DecodeToken (string token)
+    public (ClaimsIdentity, AuthenticationProperties) BuildClaims(User user)
+    {
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.Name, user.Email),
+            new(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            // new Claim(ClaimTypes.Role, "Administrator"),
+        };
+
+        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+        var authProperties = new AuthenticationProperties
+        {
+            AllowRefresh = true,
+            ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(_jwtSettings.Value.TokenLife),
+        };
+
+        return (claimsIdentity, authProperties);
+    }
+
+    public IDictionary<string, string> DecodeToken(string token)
     {
         try
         {

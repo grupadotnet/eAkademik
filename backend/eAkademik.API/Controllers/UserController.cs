@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using eAkademik.API.Services;
-using eAkademik.API.ViewModel.CreateUser;
 using eAkademik.API.ViewModel.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eAkademik.API.Controllers;
 
 [ApiController]
-[Route("users")]
+[Authorize]
+[Route("api/users")]
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -18,7 +19,7 @@ public class UserController : ControllerBase
         _userService = userService;
         _mapper = mapper;
     }
-
+    
     [HttpGet()]
     public async Task<ActionResult<List<UserViewModel>>> GetUsers()
     {
@@ -70,26 +71,6 @@ public class UserController : ControllerBase
         catch (Exception e)
         {
             return BadRequest("Couldn't update user");
-        }
-    }
-    
-    [HttpPost]
-    public async Task<IActionResult> CreateUser(CreateUserViewModel createUserRequest)
-    {
-        try
-        {
-            var (isValid, message) = createUserRequest.IsValid();
-
-            if (!isValid)
-                return BadRequest(message);
-
-            var createdUser = await _userService.CreateUser(createUserRequest);
-            return Ok(createdUser.Id);
-            
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e.Message);
         }
     }
 }
