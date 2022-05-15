@@ -28,6 +28,16 @@ public class UserService : IUserService
         return user;
     }
 
+    public async Task<User> GetUser(string email)
+    {
+        var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == email);
+
+        if (user is null)
+            throw new Exception("User not found");
+
+        return user;
+    }
+
     public async Task DeleteUser(Guid id)
     {
         var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);

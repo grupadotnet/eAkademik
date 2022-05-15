@@ -1,6 +1,7 @@
 using AutoMapper;
 using eAkademik.API;
 using eAkademik.API.Services;
+using eAkademik.API.Settings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("default")));
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 #region Helpers
 
@@ -26,6 +35,8 @@ builder.Services.AddSingleton(mapper);
 #region Services
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 #endregion
 
@@ -43,6 +54,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseSession();
 app.MapControllers();
 
 app.Run();
