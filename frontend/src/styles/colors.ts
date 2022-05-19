@@ -6,4 +6,5 @@ const white = '#FFFFFF';
 export const Colors = {
   primary: cornflowerBlue,
   onPrimary: white,
+
 };
