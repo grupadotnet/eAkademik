@@ -1,33 +1,31 @@
-import { Menu as AMenu } from 'antd';
+import { Menu } from 'antd';
 import styled from 'styled-components';
 
-const MenuItem = styled(AMenu)`
-list-style: none;
-background-color: transparent;
-color: grey;
-display: flex;
-align-items: center;
-border-right-width: 0px;
-padding-left: 20px;
-padding-right: 20px;
-font-family: Arial;
-font-size: 14px;
-margin: 0px,0px,0px,0px;
-width: 100%;
-height: 100%;
-width:260px;
+const Container = styled.div`
 
-height: 48px;
-position: relative;
-
-ul{
-  padding-right:20px;
-  font-size: 18px;
-}
-    &:hover {
-      background-color: #1b2136;
-      color: white;
-    }
+ background-color:inherit;
+ color: #bdbfc7;
+ font-family: Arial;
+ font-size: 14px;
+ width: 100%;
+ height: 100%;
+ width: 260px;
+ padding-top: 17px;
+ padding-bottom:17px;
+ border-right-width: 0px;
+ display: flex;
+ align-items: center;
+ p{
+  padding-left: 20px;
+  margin-bottom:0px;
+ }
+ span{
+    margin-right: 20px; 
+   }
+     &:hover {
+       background-color: #1a1e31;
+       color: white;
 `;
+const MenuItem = (props:any) => (<Container>{props.children}</Container>);
 
 export default MenuItem;

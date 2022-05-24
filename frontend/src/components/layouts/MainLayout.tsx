@@ -1,13 +1,39 @@
 import { Layout } from 'antd';
-import {MenuItem} from '../navigation';
-import { Header } from './components'
-import {ProfileFilled} from '@ant-design/icons';
+import { ProfileFilled } from '@ant-design/icons';
+import { MenuItem } from '../navigation';
+import { Sider } from './components/Sider';
+import { Header } from './components';
 
-const { Sider,  Content } = Layout;
+const { Content } = Layout;
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
-    <Sider width={260}><MenuItem><ul><ProfileFilled/></ul>Invoice</MenuItem></Sider>
+    <Sider><MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    <MenuItem><p><ProfileFilled/>Invoice</p></MenuItem>
+    </Sider>
     <Layout>
       <Header></Header>
       <Content>{children}</Content>
