@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.Model", "eAkademi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.Seed", "eAkademik.Seed\eAkademik.Seed.csproj", "{6CD0D277-0A87-40B3-B270-73E300BEF501}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{21887A87-238F-4F8A-8BB6-3E8C5728AFCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAkademik.UnitTests", "eAkademik.UnitTests\eAkademik.UnitTests.csproj", "{777569F7-05EA-4C4A-A780-25195A02C8F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{6CD0D277-0A87-40B3-B270-73E300BEF501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CD0D277-0A87-40B3-B270-73E300BEF501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CD0D277-0A87-40B3-B270-73E300BEF501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777569F7-05EA-4C4A-A780-25195A02C8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777569F7-05EA-4C4A-A780-25195A02C8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777569F7-05EA-4C4A-A780-25195A02C8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777569F7-05EA-4C4A-A780-25195A02C8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{777569F7-05EA-4C4A-A780-25195A02C8F1} = {21887A87-238F-4F8A-8BB6-3E8C5728AFCA}
 	EndGlobalSection
 EndGlobal
