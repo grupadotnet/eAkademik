@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eAkademik.API.Controllers;
 
 [ApiController]
-[Authorize]
+//[Authorize]
 [Route("api/users")]
 public class UserController : ControllerBase
 {
