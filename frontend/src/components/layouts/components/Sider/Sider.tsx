@@ -22,7 +22,7 @@ flex-direction: column;
 }
 overflow-x: hidden;
 &:hover{
-  overflow-y: scroll;
+  overflow-y: auto;
   
 }
 `;
