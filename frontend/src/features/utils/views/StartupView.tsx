@@ -13,6 +13,7 @@ const StartupView = () => (
   <Container>
     <div>eAkademik</div>
     <div><Link to="/components">sandbox</Link></div>
+    <div><Link to="/users">usersView</Link></div>
   </Container>
 );
 

@@ -1,11 +1,11 @@
-import { HashRouter as Router, Switch } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
+import UsersRoutes from './features/users';
 import UtilsRoutes from './features/utils';
 
 const App = () => (
   <Router>
-    <Switch>
-      <UtilsRoutes />
-    </Switch>
+    <UsersRoutes />
+    <UtilsRoutes />
   </Router>
 );
 
