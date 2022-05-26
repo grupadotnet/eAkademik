@@ -1,28 +1,28 @@
-import { Table } from "../../components/table";
-import { dataSource } from './mocks/index'
+import { Table } from '../../components/table';
+import { usersDataMock } from './mocks';
 
 const columns = [
   {
-    title: "Name",
-    key: "name",
-    dataIndex: "name",
+    title: 'Name',
+    key: 'name',
+    dataIndex: 'name',
   },
   {
-    title: "Surname",
-    dataIndex: "surname",
-    key: "surname",
+    title: 'Surname',
+    dataIndex: 'surname',
+    key: 'surname',
   },
   {
-    title: "Email",
-    dataIndex: "email",
-    key: "email",
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
   },
 ];
 
 const UsersView = () => (
-    <div>
-        <Table dataSource={dataSource} columns={columns} />
-    </div>
+  <div>
+    <Table dataSource={usersDataMock} columns={columns} />
+  </div>
 );
 
 export default UsersView;

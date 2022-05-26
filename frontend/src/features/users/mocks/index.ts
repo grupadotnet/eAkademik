@@ -1,1 +1,1 @@
-export { default as dataSource } from './UsersDataSource';
+export { default as usersDataMock } from './userDataSource';
