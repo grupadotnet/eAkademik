@@ -1,4 +1,5 @@
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -8,7 +9,7 @@ const Container = styled.div`
  font-family: Arial;
  font-size: 14px;
  width: 100%;
- height: 100%;
+ height: 100vh;
  width: 260px;
  padding-top: 17px;
  padding-bottom:17px;
@@ -25,7 +26,19 @@ const Container = styled.div`
      &:hover {
        background-color: #1a1e31;
        color: white;
+       :hover a {
+        color: white;
+      }
 `;
-const MenuItem = (props:any) => (<Container>{props.children}</Container>);
+const NavLink = styled(Link)`
+color:#bdbfc7;
+`;
+
+type Props = {
+  title: string,
+  url: string,
+}
+const MenuItem : React.FC<Props> = ({children, title, url}) => (<Container>{children}  <NavLink to={url}> {title} </NavLink> </Container>);
+
 
 export default MenuItem;
