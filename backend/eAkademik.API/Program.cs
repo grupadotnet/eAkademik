@@ -13,6 +13,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
         policy =>
         {
+            //TODO: Set up correct origins and methods
             policy.WithOrigins("*");
             policy.WithMethods("*");
         });

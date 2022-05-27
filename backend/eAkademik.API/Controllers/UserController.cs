@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eAkademik.API.Controllers;
 
 [ApiController]
+//TODO: Enable authorize filter
 //[Authorize]
 [Route("api/users")]
 public class UserController : ControllerBase
