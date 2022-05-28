@@ -1,21 +1,34 @@
 import { Layout } from 'antd';
-
-import { MenuItem, Icon } from '../navigation';
-import { Header, Content } from './components';
-
-const { Sider } = Layout;
+import { ProfileFilled } from '@ant-design/icons';
+import { MenuItem } from '../navigation';
+import { Header, Content, Sider} from './components';
+import { Breadcrumb } from 'antd';
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
-    <Sider width={260}>
-      <MenuItem>
-        <Icon />
-        Invoice
-      </MenuItem>
+    <Sider>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>    
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
     </Sider>
     <Layout>
-      <Header />
+      <Header></Header>
       <Content>{children}</Content>
+      <Content style={{ padding: '0 50px' }}>
+    </Content>
     </Layout>
   </Layout>
 );
