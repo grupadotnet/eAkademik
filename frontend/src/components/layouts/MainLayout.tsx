@@ -7,22 +7,22 @@ import { Breadcrumb } from 'antd';
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
     <Sider>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>    
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>    
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
     </Sider>
     <Layout>
       <Header></Header>
