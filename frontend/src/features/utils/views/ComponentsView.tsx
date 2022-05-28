@@ -5,6 +5,7 @@ import { Checkbox } from "../../../components/checkbox";
 import { Button } from "../../../components/buttons";
 import { Header } from "../../../components/layouts/components";
 import { Table } from "../../../components/table";
+import { Breadcrumb } from "../../../components/breadcrumb";
 
 const Item = styled.div`
   margin: 25px 0px;
@@ -65,6 +66,7 @@ const ComponentsView = () => (
       Button component
       <br />
       <Button>Główny przycisk</Button>
+      <Button>Drugi przycisk</Button>
     </Item>
     <Item>
       <br />
@@ -87,6 +89,17 @@ const ComponentsView = () => (
       Table component
       <Table dataSource={dataSource} columns={columns} />
     </Item>
+
+    <Item>
+      Breadcrumb component
+      <Breadcrumb>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>Applications</Breadcrumb.Item>
+        <Breadcrumb.Item>Terminal</Breadcrumb.Item>
+      
+      </Breadcrumb>
+    </Item>
+
     <hr />
   </div>
 );
