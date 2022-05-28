@@ -6,22 +6,28 @@ import { Breadcrumb } from 'antd';
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
-    <Sider><MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>    
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-    <MenuItem title="Invoice" url="Invoice" ><p><ProfileFilled/></p></MenuItem>
-  
+    <Sider>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>    
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
+      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}><p></p></MenuItem>
     </Sider>
     <Layout>
       <Header></Header>
+      <Content>{children}</Content>
       <Content style={{ padding: '0 50px' }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-      </Breadcrumb>
-      <div className="site-layout-content">Content</div>
     </Content>
     </Layout>
   </Layout>
