@@ -1,4 +1,5 @@
 import { HashRouter as Router, Switch } from 'react-router-dom';
+
 import UtilsRoutes from './features/utils';
 
 const App = () => (

@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^5.6.4",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
@@ -60,6 +61,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "@craco/craco": "^5.6.4"
+    "eslint-plugin-simple-import-sort": "^7.0.0"
   }
 }

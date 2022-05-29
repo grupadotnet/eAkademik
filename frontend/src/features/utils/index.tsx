@@ -1,7 +1,6 @@
 import { Route } from 'react-router-dom';
 
 import { MainLayout } from '../../components/layouts';
-
 import ComponentsView from './views/ComponentsView';
 import StartupView from './views/StartupView';
 

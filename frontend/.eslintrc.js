@@ -5,7 +5,12 @@ module.exports = {
     "airbnb",
     "airbnb-typescript"
   ],
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "simple-import-sort",
+  ],
   "rules": {
     "import/no-unresolved": "error",
     "linebreak-style": 0,
@@ -15,7 +20,9 @@ module.exports = {
     "react/prop-types": "off",
     "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
     "react/function-component-definition": [0, { namedComponents: "function-declaration" }],
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "import/parsers": {
@@ -33,5 +40,5 @@ module.exports = {
   },
   "parserOptions": {
     "project": ["./tsconfig.json"]
-  }
+  },
 }

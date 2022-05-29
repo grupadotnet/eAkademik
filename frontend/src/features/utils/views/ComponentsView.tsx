@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Button } from '@/components/buttons';
 import { Card } from '@/components/card';
 import { Checkbox } from '@/components/checkbox';
-import { Button } from '@/components/buttons';
 import { Header } from '@/components/layouts/components';
 import { Table } from '@/components/table';
 

@@ -1,12 +1,13 @@
 import { Layout } from 'antd';
 
-import { MenuItem, Icon } from '@/components/navigation';
-import { Header, Content } from './components';
+import { Icon, MenuItem } from '@/components/navigation';
+
+import { Content, Header } from './components';
 
 const { Sider } = Layout;
 
 const MainLayout: React.FC = ({ children }) => (
-  <Layout style={{ minHeight: '100vh' }}>
+  <Layout>
     <Sider width={260}>
       <MenuItem>
         <Icon />

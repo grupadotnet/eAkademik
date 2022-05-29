@@ -1,9 +1,9 @@
+import { Table as ATable, TableProps } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
-import { Table as ATable, TableProps } from 'antd';
 
-import { Colors } from '@/styles/colors';
 import { List } from '@/constants';
+import { Colors } from '@/styles/colors';
 
 const StyledTable = styled(ATable)`
     box-shadow: 0px 5px 30px -6px ${Colors.shadow};
