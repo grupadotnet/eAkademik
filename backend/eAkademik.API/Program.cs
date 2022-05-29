@@ -1,38 +1,72 @@
-using AutoMapper;
+using System.Net;
 using eAkademik.API;
+using eAkademik.API.Installers.Extensions;
 using eAkademik.API.Services;
+using eAkademik.API.Settings;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            //TODO: Set up correct origins and methods
+            policy.WithOrigins("*");
+            policy.WithMethods("*");
+        });
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("default")));
+builder.Services.AddDistributedMemoryCache();
 
-#region Helpers
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
-var mapperConfig = new MapperConfiguration(mc => { mc.AddProfile(new MappingProfiles()); });
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(double.Parse(builder.Configuration["Jwt:TokenLife"]));
+        options.SlidingExpiration = true;
+        options.Events = new CookieAuthenticationEvents
+        {
+            OnRedirectToLogin = ctx =>
+            {
+                if (ctx.Request.Path.StartsWithSegments("/api") && ctx.Response.StatusCode == (int) HttpStatusCode.OK)
+                {
+                    ctx.Response.StatusCode = (int) HttpStatusCode.Unauthorized;
+                }
+                else
+                {
+                    ctx.Response.Redirect(ctx.RedirectUri);
+                }
+                return Task.FromResult(0);
+            }
+        };
+    });
 
-mapperConfig.AssertConfigurationIsValid();
-var mapper = mapperConfig.CreateMapper();
-builder.Services.AddSingleton(mapper);
-
-#endregion
+builder.Services.InstallServicesInAssembly(builder.Configuration);
 
 #region Services
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 #endregion
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -41,8 +75,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseSession();
 app.MapControllers();
 
 app.Run();

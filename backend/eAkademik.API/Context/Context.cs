@@ -4,12 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eAkademik.API;
 
-public class Context: DbContext
+public class Context : DbContext
 {
+    public Context()
+    {
+        
+    }
     public Context(DbContextOptions options) : base(options)
     {
     }
-
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSnakeCaseNamingConvention();
@@ -21,10 +25,8 @@ public class Context: DbContext
     }
 
     #region Entities
-    
+
     public DbSet<User> Users { get; set; }
-    
 
     #endregion
-   
 }

@@ -22,7 +22,9 @@ module.exports = {
     "react/function-component-definition": [0, { namedComponents: "function-declaration" }],
     "react/jsx-props-no-spreading": "off",
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "max-len": ["error", { "code": 160 }],
+    "implicit-arrow-linebreak": "off"
   },
   "settings": {
     "import/parsers": {
