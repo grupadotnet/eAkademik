@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import styled from 'styled-components';
 
-import { Colors } from '../../../styles';
+import { Colors } from '@/styles/colors';
 
 const { Header: AHeader } = Layout;
 

@@ -1,5 +1,6 @@
-import { Table } from '../../components/table';
-import { usersDataMock } from './mocks';
+import { Table } from '@/components/table';
+
+import { usersDataMock } from '../mocks';
 
 const columns = [
   {
@@ -20,9 +21,7 @@ const columns = [
 ];
 
 const UsersView = () => (
-  <div>
-    <Table dataSource={usersDataMock} columns={columns} />
-  </div>
+  <Table dataSource={usersDataMock} columns={columns} />
 );
 
 export default UsersView;

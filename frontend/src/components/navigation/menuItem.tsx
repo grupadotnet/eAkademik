@@ -1,6 +1,6 @@
+import { ProfileFilled } from '@ant-design/icons';
 import { Menu as AMenuItem } from 'antd';
 import styled from 'styled-components';
-import { ProfileFilled } from '@ant-design/icons';
 
 const Icon = styled(ProfileFilled)`
   font-size: 18px;
