@@ -1,7 +1,8 @@
 import { Layout } from 'antd';
 
-import { MenuItem, Icon } from '../navigation';
-import { Header, Content } from './components';
+import { Icon, MenuItem } from '@/components/navigation';
+
+import { Content, Header } from './components';
 
 const { Sider } = Layout;
 

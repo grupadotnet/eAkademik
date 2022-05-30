@@ -1,9 +1,9 @@
 import { Table as ATable, TableProps } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
-import { size } from '../../constants';
 
-import { Colors } from '../../styles';
+import { List } from '@/constants';
+import { Colors } from '@/styles/colors';
 
 const StyledTable = styled(ATable)`
     box-shadow: 0px 5px 30px -6px ${Colors.shadow};
@@ -24,11 +24,10 @@ const StyledTable = styled(ATable)`
     .ant-table-tbody > tr > td {
         border-bottom: 1px solid ${Colors.divider};
     }
-}
 `;
 
 const Table: React.VFC<TableProps<object>> = ({ ...passThroughProps }) => (
-  <StyledTable {...passThroughProps} pagination={{ pageSize: size }} />
+  <StyledTable {...passThroughProps} pagination={{ pageSize: List.size }} />
 );
 
 export default Table;

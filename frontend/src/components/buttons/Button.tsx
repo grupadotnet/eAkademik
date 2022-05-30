@@ -2,7 +2,7 @@ import { Button as AButton } from 'antd';
 import { darken } from 'polished';
 import styled from 'styled-components';
 
-import { Colors } from '../../styles';
+import { Colors } from '@/styles/colors';
 
 const Button = styled(AButton)`
   background-color: ${Colors.primary};

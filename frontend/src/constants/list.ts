@@ -1,1 +1,3 @@
-export const size = 20;
+export default {
+  size: 20,
+};

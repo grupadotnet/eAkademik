@@ -10,10 +10,11 @@ const Container = styled.div`
 `;
 
 const StartupView = () => (
-    <Container>
-      <div>eAkademik</div>
-      <div><Link to="/components">sandbox</Link></div>
-    </Container>
-  );
+  <Container>
+    <div>eAkademik</div>
+    <div><Link to="/components">sandbox</Link></div>
+    <div><Link to="/users">usersView</Link></div>
+  </Container>
+);
 
 export default StartupView;
