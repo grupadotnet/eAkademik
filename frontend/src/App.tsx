@@ -2,6 +2,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { MainLayout } from '@/components/layouts';
 import { UsersViews } from '@/features/users';
+import { AddUserForm } from '@/features/users'
 import { ComponentsView, StartupView } from '@/features/utils';
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
         <Route exact path="/" component={StartupView} />
         <Route path="/components" component={ComponentsView} />
         <Route path="/users" component={UsersViews} />
+        <Route path="/addUserForm" component={AddUserForm} />
 
         {/* If doesn't find any route displays startup view */}
         <Route path="*" component={StartupView} />
