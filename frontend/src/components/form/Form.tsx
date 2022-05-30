@@ -29,6 +29,7 @@ const Form: React.VFC<FormProps<object>> = ({ ...passThroughProps }) => {
                         {
                             required: true,
                             message: 'Please enter your first name!',
+                            whitespace: false,
                         },
                     ]}
                 >
@@ -43,25 +44,64 @@ const Form: React.VFC<FormProps<object>> = ({ ...passThroughProps }) => {
                         {
                             required: true,
                             message: 'Please enter your last name!',
+                            whitespace: false,
                         },
                     ]}
                 >
                     <Input placeholder='Last Name' />
                 </StyledForm.Item>
                 <StyledForm.Item
-                    label="Email"
-                    name="email"
+                    label='Email'
+                    name='email'
                     required
-                    tooltip="This is a required field"
+                    tooltip='Required field'
                     rules={[
                         {
-                        required: true,
-                        message: "Please enter your email!",
-                        type: "email",
+                            required: true,
+                            message: 'Please enter your email!',
+                            type: 'email',
                         },
                     ]}
                     >
-                    <Input placeholder="Email" />
+                    <Input placeholder='Email' />
+                </StyledForm.Item>
+                <StyledForm.Item
+                    label='Password'
+                    name='password'
+                    required
+                    tooltip='Required field'
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please enter your password',
+                        },
+                    ]}
+                >
+                    <Input.Password placeholder='Password' />
+                </StyledForm.Item>
+                <StyledForm.Item
+                    label='Confirm password'
+                    name='confirmpassword'
+                    required
+                    tooltip='Required field'
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please confirm your password',
+                        },
+                        ({getFieldValue}) => ({
+                            validator(_, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve();
+                                }
+                                else {
+                                    return Promise.reject('Passwords do not match!');
+                                }
+                            }
+                        })
+                    ]}
+                >
+                    <Input.Password placeholder='Confirm password' />
                 </StyledForm.Item>
             </StyledForm>
         </div>
