@@ -22,3 +22,13 @@ const Button = styled(AButton)`
 `;
 
 export default Button;
+
+
+/*
+const Button = styled.div`
+img{
+color: red;
+}
+`;
+
+*/
