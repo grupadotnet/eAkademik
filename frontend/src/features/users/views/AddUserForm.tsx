@@ -1,7 +1,7 @@
 import { Form } from '../../../components/form';
 
 const AddUserForm = () => (
-    <Form />
-)
+  <Form />
+);
 
 export default AddUserForm;

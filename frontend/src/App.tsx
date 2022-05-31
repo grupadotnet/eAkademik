@@ -1,9 +1,8 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { UsersViews, AddUserForm } from '@/features/users';
+import { ComponentsView, StartupView } from '@/features/utils';
 
 import { MainLayout } from '@/components/layouts';
-import { UsersViews } from '@/features/users';
-import { AddUserForm } from '@/features/users'
-import { ComponentsView, StartupView } from '@/features/utils';
 
 const App = () => (
   <Router>
