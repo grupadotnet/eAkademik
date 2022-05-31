@@ -12,6 +12,7 @@ module.exports = {
     "simple-import-sort",
   ],
   "rules": {
+    "prefer-promise-reject-errors": "off",
     "import/no-unresolved": "error",
     "linebreak-style": 0,
     "prefer-arrow-callback": "error",

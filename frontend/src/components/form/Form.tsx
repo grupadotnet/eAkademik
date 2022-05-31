@@ -1,9 +1,10 @@
-import { Form as AForm, Button, Input, Typography } from 'antd';
-
+import {
+  Form as AForm, Input, Row, Typography,
+} from 'antd';
 import styled from 'styled-components';
 
+import { Button } from '@/components/buttons';
 import { Colors } from '@/styles/colors';
-import { darken } from 'polished';
 
 const StyledForm = styled(AForm)`
   background: ${Colors.onPrimary};
@@ -33,18 +34,6 @@ const StyledForm = styled(AForm)`
     width: 100%;
   }
 
-  .submit-btn {
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: ${Colors.button};
-    transition: all 0.5s;
-    border: none;
-  }
-
-  .submit-btn:hover {
-    background-color: ${darken(0.04, Colors.button)};
-  }
-
   Input {
     border-radius: 5px;
   }
@@ -58,103 +47,109 @@ const Form: React.VFC = () => {
       <Title>Adding New User</Title>
       <StyledForm
         form={form}
-        name='add-new-user'
-        layout='vertical'
+        name="add-new-user"
+        layout="vertical"
       >
-        <div className='first-and-last-name-form'> 
+        <div className="first-and-last-name-form">
           <StyledForm.Item
-            className='form-item'
-            label='First name'
-            name='firstname'
+            className="form-item"
+            label="First name"
+            name="firstname"
             required
-            tooltip='Required field'
+            tooltip="Required field"
             rules={[
               {
                 required: true,
                 message: 'Please enter your first name!',
                 whitespace: false,
+                max: 256,
               },
             ]}
           >
-            <Input placeholder='First Name' />
+            <Input placeholder="First Name" />
           </StyledForm.Item>
           <StyledForm.Item
-            className='form-item'
-            label='Last name'
-            name='lastname'
+            className="form-item"
+            label="Last name"
+            name="lastname"
             required
-            tooltip='Required field'
+            tooltip="Required field"
             rules={[
               {
                 required: true,
                 message: 'Please enter your last name!',
                 whitespace: false,
+                max: 256,
               },
             ]}
           >
-            <Input placeholder='Last Name' />
+            <Input placeholder="Last Name" />
           </StyledForm.Item>
         </div>
         <StyledForm.Item
-          className='form-item'
-          label='Email'
-          name='email'
+          className="form-item"
+          label="Email"
+          name="email"
           required
-          tooltip='Required field'
+          tooltip="Required field"
           rules={[
             {
               required: true,
               message: 'Please enter your email!',
               type: 'email',
+              max: 256,
             },
           ]}
         >
-          <Input placeholder='Email' />
+          <Input placeholder="Email" />
         </StyledForm.Item>
         <StyledForm.Item
-          className='form-item'
-          label='Password'
-          name='password'
+          className="form-item"
+          label="Password"
+          name="password"
           required
-          tooltip='Required field'
+          tooltip="Required field"
           rules={[
             {
               required: true,
               message: 'Please enter your password',
+              max: 256,
             },
           ]}
         >
-          <Input.Password placeholder='Password' />
+          <Input.Password placeholder="Password" />
         </StyledForm.Item>
         <StyledForm.Item
-          className='form-item'
-          label='Confirm password'
-          name='confirmpassword'
+          className="form-item"
+          label="Confirm password"
+          name="confirmpassword"
           required
-          tooltip='Required field'
+          tooltip="Required field"
           rules={[
             {
               required: true,
               message: 'Please confirm your password',
+              max: 256,
             },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue('password') === value) {
                   return Promise.resolve();
                 }
-                else {
-                  return Promise.reject('Passwords do not match!');
-                }
+
+                return Promise.reject('Passwords do not match!');
               },
             }),
           ]}
         >
-          <Input.Password placeholder='Confirm password' />
+          <Input.Password placeholder="Confirm password" />
         </StyledForm.Item>
-        <StyledForm.Item className='submit-btn-parent'>
-            <Button type='primary' className='submit-btn'>
-                Create user
+        <StyledForm.Item className="submit-btn-parent">
+          <Row justify="end">
+            <Button type="primary" className="submit-btn">
+              Create user
             </Button>
+          </Row>
         </StyledForm.Item>
       </StyledForm>
     </div>
