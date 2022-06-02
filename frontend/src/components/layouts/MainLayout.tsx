@@ -1,34 +1,19 @@
 import { Layout } from 'antd';
-import { ProfileFilled } from '@ant-design/icons';
+import { UserOutlined, SettingFilled } from '@ant-design/icons';
 import { MenuItem } from '../navigation';
 import { Header, Content, Sider} from './components';
 import { Breadcrumb } from 'antd';
 
 const MainLayout: React.FC = ({ children }) => (
   <Layout style={{ minHeight: '100vh' }}>
-    <Sider>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>    
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
-      <MenuItem title="Invoice" url="Invoice" icon ={<ProfileFilled/>}></MenuItem>
+    <Sider width={260}>
+      <MenuItem title="Użytkownicy" url="/users" icon={<UserOutlined />}></MenuItem>    
+      <MenuItem  title="Kompononety" url="/utils" icon={<SettingFilled />}></MenuItem>
     </Sider>
     <Layout>
       <Header></Header>
-      <Content>{children}</Content>
-      <Content style={{ padding: '0 50px' }}>
-    </Content>
+      <Content>
+      </Content>
     </Layout>
   </Layout>
 );

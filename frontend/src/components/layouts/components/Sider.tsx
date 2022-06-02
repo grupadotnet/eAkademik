@@ -1,30 +1,22 @@
 import styled from "styled-components";
 import type { MenuProps } from 'antd';
-import { Menu as AMenu } from 'antd';
+import {Layout} from 'antd';
+import {Colors} from '../../../styles';
 
-const Sider =styled(AMenu)`
+const { Sider: ASider } = Layout;
 
-margin: 0;
-width: 260px;
-background-color: #232a44;
-top: 0px;
-bottom: 0;
-border-right-width: 0px;
-position: absolute;
-display: flex;
-flex-direction: column;
-&::-webkit-scrollbar {
+const Sider =styled(ASider)`
+  background-color: ${Colors.siderBackground};
+  border-right-width: 0px;
+  &::-webkit-scrollbar {
     border-radius: 10px;
-  width: 10px;
-  border: 2px solid black;
-  background: #8c8c8e;
-  height: 600px;
-}
-overflow-x: hidden;
-&:hover{
-  overflow-y: auto;
-  
-}
+    width: 10px;
+    border: 2px ${Colors.blackScrollbar};
+    background: ${Colors.scrollbarBackground};
+  }
+  &:hover{
+    overflow-y: auto;
+  }
 `;
   
-  export default Sider
+  export default Sider;
