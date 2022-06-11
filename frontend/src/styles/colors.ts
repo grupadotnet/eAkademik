@@ -5,6 +5,7 @@ const white = '#FFFFFF';
 const lightGray = '#D9D9D9';
 const gray = '#8A8A8A';
 const silver = '#BFBFBF';
+const oliveDrab = '#6CA12B';
 
 export const Colors = {
   primary: cornflowerBlue,
@@ -12,4 +13,5 @@ export const Colors = {
   divider: lightGray,
   header: gray,
   shadow: silver,
+  button: oliveDrab,
 };

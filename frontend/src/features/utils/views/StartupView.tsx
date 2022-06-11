@@ -14,6 +14,7 @@ const StartupView = () => (
     <div>eAkademik</div>
     <div><Link to="/components">sandbox</Link></div>
     <div><Link to="/users">usersView</Link></div>
+    <div><Link to="/addUserForm">addUserForm</Link></div>
   </Container>
 );
 
